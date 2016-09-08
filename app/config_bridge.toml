@@ -1,0 +1,26 @@
+# Bridge server config.toml example
+
+port = 8001
+horizon = "https://horizon-testnet.stellar.org"
+network_passphrase = "Test SDF Network ; September 2015"
+api_key = ""
+
+[[assets]]
+code="USD"
+issuer="GBNRMMUAUJT7E5VN4SQCE3G3IV4TINMPRDTYZKT7XUFHYTCLDY2PCKO6"
+
+[[assets]]
+code="EUR"
+issuer="GBNRMMUAUJT7E5VN4SQCE3G3IV4TINMPRDTYZKT7XUFHYTCLDY2PCKO6"
+
+[database]
+type = "mysql"
+url = "root:mysql@tcp(172.16.238.10:3306)/mysql?parseTime=true"
+
+[accounts]
+authorizing_seed = "SCH7UF5DGF3K5H4UILBGQY7BWXX7LAXOESCR2RVCN4WOKKYPR2XWQACP" # GCAW3TYUYGCNODKO4QKMD6PSH5GP3KES4GWGVFCKZ6DD6EJUDUQ77BO
+receiving_account_id = "GBNRMMUAUJT7E5VN4SQCE3G3IV4TINMPRDTYZKT7XUFHYTCLDY2PCKO6"
+
+[callbacks]
+receive = "http://localhost:8002/receive"
+error = "http://localhost:8002/error"
