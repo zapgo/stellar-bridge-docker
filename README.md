@@ -11,14 +11,14 @@ Get the Stellar Bridge Server up and running in a docker container. This reposit
 `docker-compose build bridge`
 
 ### 2. Create the config file:
-Create a the file app/bin/config_bridge.toml.
+Create a the file app/bin/config_bridge.toml.  
 `cp config_bridge_example.toml app/bin/config_bridge.toml`
 
 Make sure the MySQL DB IP address matches the static address set in your docker compose file. e.g:
 > url = "root:mysql@tcp(172.16.238.10:3306)/mysql?parseTime=true"
 
 ### 2. Run the bridge server:
-docke-compose up
+docker-compose up
 
 ### Optional copy compiled code:
 This repository contains the compiled code in the /app directory, so the following steps are not neccessary:
